@@ -1,0 +1,48 @@
+{
+    "horario": "2025-07-22 21:12:57",
+    "input": {
+        "name": "Breno Quintanillha",
+        "email": "fulano@example.com",
+        "phone": "21991021003",
+        "cpf": "35583648805",
+        "amount": 5493,
+        "utm": []
+    },
+    "payload_enviado": {
+        "amount": 5493,
+        "offer_hash": "74u6h",
+        "payment_method": "pix",
+        "customer": {
+            "name": "Breno Quintanillha",
+            "email": "fulano@example.com",
+            "phone_number": "21991021003",
+            "document": "35583648805",
+            "city": "S\u00e3o Paulo",
+            "state": "SP",
+            "zip_code": "01001000"
+        },
+        "cart": [
+            {
+                "product_hash": "gxaw8gzznu",
+                "title": "Produto Teste",
+                "price": 5493,
+                "quantity": 1,
+                "operation_type": 1,
+                "tangible": false
+            }
+        ],
+        "installments": 1,
+        "expire_in_days": 1,
+        "postback_url": "\/webhook\/pix_webhook.php",
+        "tracking": {
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_content": ""
+        }
+    },
+    "erro_api": null,
+    "http_code": 0
+}
+

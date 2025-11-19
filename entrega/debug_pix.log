@@ -1,0 +1,480 @@
+{
+    "horario": "2025-07-17 16:38:38",
+    "input": {
+        "name": "",
+        "email": "",
+        "phone": "",
+        "cpf": "46970286193",
+        "amount": 4980,
+        "utm": []
+    },
+    "payload_enviado": {
+        "amount": 4980,
+        "offer_hash": "uidqmu9ysn",
+        "payment_method": "pix",
+        "customer": {
+            "name": "",
+            "email": "",
+            "phone_number": "",
+            "document": "46970286193",
+            "city": "S\u00e3o Paulo",
+            "state": "SP",
+            "zip_code": "01001000"
+        },
+        "cart": [
+            {
+                "product_hash": "exu1r0d4ov",
+                "title": "Produto Teste",
+                "price": 4980,
+                "quantity": 1,
+                "operation_type": 1,
+                "tangible": false
+            }
+        ],
+        "installments": 1,
+        "expire_in_days": 1,
+        "postback_url": "\/webhook\/pix_webhook.php",
+        "tracking": {
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_content": ""
+        }
+    },
+    "erro_api": null,
+    "http_code": 500
+}
+
+{
+    "horario": "2025-07-17 16:42:03",
+    "input": {
+        "name": "awdsad",
+        "email": "gns@gmail.com",
+        "phone": "",
+        "cpf": "61732204233",
+        "amount": 2990,
+        "utm": []
+    },
+    "payload_enviado": {
+        "amount": 2990,
+        "offer_hash": "uidqmu9ysn",
+        "payment_method": "pix",
+        "customer": {
+            "name": "awdsad",
+            "email": "gns@gmail.com",
+            "phone_number": "",
+            "document": "61732204233",
+            "city": "S\u00e3o Paulo",
+            "state": "SP",
+            "zip_code": "01001000"
+        },
+        "cart": [
+            {
+                "product_hash": "exu1r0d4ov",
+                "title": "Produto Teste",
+                "price": 2990,
+                "quantity": 1,
+                "operation_type": 1,
+                "tangible": false
+            }
+        ],
+        "installments": 1,
+        "expire_in_days": 1,
+        "postback_url": "\/webhook\/pix_webhook.php",
+        "tracking": {
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_content": ""
+        }
+    },
+    "erro_api": null,
+    "http_code": 0
+}
+
+{
+    "horario": "2025-07-17 17:01:00",
+    "input": {
+        "name": "lucas pedrito",
+        "email": "pedrito@gmail.com",
+        "phone": "32323",
+        "cpf": "94025253860",
+        "amount": 4980,
+        "utm": []
+    },
+    "payload_enviado": {
+        "amount": 4980,
+        "offer_hash": "uidqmu9ysn",
+        "payment_method": "pix",
+        "customer": {
+            "name": "lucas pedrito",
+            "email": "pedrito@gmail.com",
+            "phone_number": "32323",
+            "document": "94025253860",
+            "city": "S\u00e3o Paulo",
+            "state": "SP",
+            "zip_code": "01001000"
+        },
+        "cart": [
+            {
+                "product_hash": "exu1r0d4ov",
+                "title": "Produto Teste",
+                "price": 4980,
+                "quantity": 1,
+                "operation_type": 1,
+                "tangible": false
+            }
+        ],
+        "installments": 1,
+        "expire_in_days": 1,
+        "postback_url": "\/webhook\/pix_webhook.php",
+        "tracking": {
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_content": ""
+        }
+    },
+    "erro_api": null,
+    "http_code": 0
+}
+
+{
+    "horario": "2025-07-17 17:01:33",
+    "input": {
+        "name": "lucas pedrito",
+        "email": "pedrito@gmail.com",
+        "phone": "3223333",
+        "cpf": "02138038440",
+        "amount": 3980,
+        "utm": []
+    },
+    "payload_enviado": {
+        "amount": 3980,
+        "offer_hash": "uidqmu9ysn",
+        "payment_method": "pix",
+        "customer": {
+            "name": "lucas pedrito",
+            "email": "pedrito@gmail.com",
+            "phone_number": "3223333",
+            "document": "02138038440",
+            "city": "S\u00e3o Paulo",
+            "state": "SP",
+            "zip_code": "01001000"
+        },
+        "cart": [
+            {
+                "product_hash": "exu1r0d4ov",
+                "title": "Produto Teste",
+                "price": 3980,
+                "quantity": 1,
+                "operation_type": 1,
+                "tangible": false
+            }
+        ],
+        "installments": 1,
+        "expire_in_days": 1,
+        "postback_url": "\/webhook\/pix_webhook.php",
+        "tracking": {
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_content": ""
+        }
+    },
+    "erro_api": null,
+    "http_code": 0
+}
+
+{
+    "horario": "2025-07-17 17:02:34",
+    "input": {
+        "name": "lucas pedrito",
+        "email": "pedrito@gmail.com",
+        "phone": "21991021003",
+        "cpf": "27530569279",
+        "amount": 4980,
+        "utm": []
+    },
+    "payload_enviado": {
+        "amount": 4980,
+        "offer_hash": "uidqmu9ysn",
+        "payment_method": "pix",
+        "customer": {
+            "name": "lucas pedrito",
+            "email": "pedrito@gmail.com",
+            "phone_number": "21991021003",
+            "document": "27530569279",
+            "city": "S\u00e3o Paulo",
+            "state": "SP",
+            "zip_code": "01001000"
+        },
+        "cart": [
+            {
+                "product_hash": "exu1r0d4ov",
+                "title": "Produto Teste",
+                "price": 4980,
+                "quantity": 1,
+                "operation_type": 1,
+                "tangible": false
+            }
+        ],
+        "installments": 1,
+        "expire_in_days": 1,
+        "postback_url": "\/webhook\/pix_webhook.php",
+        "tracking": {
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_content": ""
+        }
+    },
+    "erro_api": null,
+    "http_code": 0
+}
+
+{
+    "horario": "2025-07-17 17:03:09",
+    "input": {
+        "name": "lucas pedrito",
+        "email": "pedrito@gmail.com",
+        "phone": "33",
+        "cpf": "19388077822",
+        "amount": 3980,
+        "utm": []
+    },
+    "payload_enviado": {
+        "amount": 3980,
+        "offer_hash": "uidqmu9ysn",
+        "payment_method": "pix",
+        "customer": {
+            "name": "lucas pedrito",
+            "email": "pedrito@gmail.com",
+            "phone_number": "33",
+            "document": "19388077822",
+            "city": "S\u00e3o Paulo",
+            "state": "SP",
+            "zip_code": "01001000"
+        },
+        "cart": [
+            {
+                "product_hash": "exu1r0d4ov",
+                "title": "Produto Teste",
+                "price": 3980,
+                "quantity": 1,
+                "operation_type": 1,
+                "tangible": false
+            }
+        ],
+        "installments": 1,
+        "expire_in_days": 1,
+        "postback_url": "\/webhook\/pix_webhook.php",
+        "tracking": {
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_content": ""
+        }
+    },
+    "erro_api": null,
+    "http_code": 0
+}
+
+{
+    "horario": "2025-07-17 17:12:49",
+    "input": {
+        "name": "",
+        "email": "",
+        "phone": "",
+        "cpf": "32092215612",
+        "amount": 5970,
+        "utm": []
+    },
+    "payload_enviado": {
+        "amount": 5970,
+        "offer_hash": "uidqmu9ysn",
+        "payment_method": "pix",
+        "customer": {
+            "name": "",
+            "email": "",
+            "phone_number": "",
+            "document": "32092215612",
+            "city": "S\u00e3o Paulo",
+            "state": "SP",
+            "zip_code": "01001000"
+        },
+        "cart": [
+            {
+                "product_hash": "exu1r0d4ov",
+                "title": "Produto Teste",
+                "price": 5970,
+                "quantity": 1,
+                "operation_type": 1,
+                "tangible": false
+            }
+        ],
+        "installments": 1,
+        "expire_in_days": 1,
+        "postback_url": "\/webhook\/pix_webhook.php",
+        "tracking": {
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_content": ""
+        }
+    },
+    "erro_api": null,
+    "http_code": 500
+}
+
+{
+    "horario": "2025-07-17 18:38:38",
+    "input": {
+        "name": "",
+        "email": "",
+        "phone": "",
+        "cpf": "09796477890",
+        "amount": 5930,
+        "utm": []
+    },
+    "payload_enviado": {
+        "amount": 5930,
+        "offer_hash": "uidqmu9ysn",
+        "payment_method": "pix",
+        "customer": {
+            "name": "",
+            "email": "",
+            "phone_number": "",
+            "document": "09796477890",
+            "city": "S\u00e3o Paulo",
+            "state": "SP",
+            "zip_code": "01001000"
+        },
+        "cart": [
+            {
+                "product_hash": "exu1r0d4ov",
+                "title": "Produto Teste",
+                "price": 5930,
+                "quantity": 1,
+                "operation_type": 1,
+                "tangible": false
+            }
+        ],
+        "installments": 1,
+        "expire_in_days": 1,
+        "postback_url": "\/webhook\/pix_webhook.php",
+        "tracking": {
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_content": ""
+        }
+    },
+    "erro_api": null,
+    "http_code": 500
+}
+
+{
+    "horario": "2025-07-17 18:40:29",
+    "input": {
+        "name": "",
+        "email": "",
+        "phone": "",
+        "cpf": "63279564913",
+        "amount": 3990,
+        "utm": []
+    },
+    "payload_enviado": {
+        "amount": 3990,
+        "offer_hash": "uidqmu9ysn",
+        "payment_method": "pix",
+        "customer": {
+            "name": "",
+            "email": "",
+            "phone_number": "",
+            "document": "63279564913",
+            "city": "S\u00e3o Paulo",
+            "state": "SP",
+            "zip_code": "01001000"
+        },
+        "cart": [
+            {
+                "product_hash": "exu1r0d4ov",
+                "title": "Produto Teste",
+                "price": 3990,
+                "quantity": 1,
+                "operation_type": 1,
+                "tangible": false
+            }
+        ],
+        "installments": 1,
+        "expire_in_days": 1,
+        "postback_url": "\/webhook\/pix_webhook.php",
+        "tracking": {
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_content": ""
+        }
+    },
+    "erro_api": null,
+    "http_code": 500
+}
+
+{
+    "horario": "2025-07-17 18:40:32",
+    "input": {
+        "name": "",
+        "email": "",
+        "phone": "",
+        "cpf": "85216925368",
+        "amount": 3990,
+        "utm": []
+    },
+    "payload_enviado": {
+        "amount": 3990,
+        "offer_hash": "uidqmu9ysn",
+        "payment_method": "pix",
+        "customer": {
+            "name": "",
+            "email": "",
+            "phone_number": "",
+            "document": "85216925368",
+            "city": "S\u00e3o Paulo",
+            "state": "SP",
+            "zip_code": "01001000"
+        },
+        "cart": [
+            {
+                "product_hash": "exu1r0d4ov",
+                "title": "Produto Teste",
+                "price": 3990,
+                "quantity": 1,
+                "operation_type": 1,
+                "tangible": false
+            }
+        ],
+        "installments": 1,
+        "expire_in_days": 1,
+        "postback_url": "\/webhook\/pix_webhook.php",
+        "tracking": {
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_content": ""
+        }
+    },
+    "erro_api": null,
+    "http_code": 500
+}
+

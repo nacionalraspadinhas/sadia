@@ -1,0 +1,509 @@
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>teste</title>
+</head>
+<body>
+<p><button id="abrir-popup" style="background:#0078D4; padding:12px 24px; color:#fff; border:none; border-radius:8px; cursor:pointer; font-family: sans-serif; font-weight: bold;">Pagar agora</button></p>
+
+<div id="popup-pix" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center; animation:backdropFadeIn 0.3s ease-out forwards; font-family: Arial, sans-serif;">
+<div style="background:#ffffff; color: #333; border-radius:12px; max-width:420px; width:90%; max-height: 90vh; display: flex; flex-direction: column; box-shadow:0 8px 30px rgba(0,0,0,0.2); position:relative; animation:popupSlideIn 0.3s ease-out forwards; overflow:hidden;">
+<div style="background:#0078D4; color:#fff; padding: 20px 24px; display:flex; justify-content: center;">
+<h2 style="margin:0; font-size:20px; font-weight:bold;">Finalizar Pagamento com PIX</h2>
+</div>
+
+<div id="form-container" style="padding: 24px; overflow-y: auto;">
+<div id="lead-capture" style="margin-bottom:16px; text-align:center;"><img alt="Banner do site" src="images/banner.png" style="width: 100%; height: auto; display: block;margin-top: -44px;" /> <input id="client-name" placeholder="Nome completo" style="width:100%; box-sizing: border-box; padding:12px; margin-bottom:12px; font-size:14px; border:1px solid #ccc; border-radius:8px; background-color:#f9f9f9; color:#333;" type="text" /> <input id="client-email" placeholder="E-mail" style="width:100%; box-sizing: border-box; padding:12px; margin-bottom:12px; font-size:14px; border:1px solid #ccc; border-radius:8px; background-color:#f9f9f9; color:#333;" type="email" /> <input id="client-phone" placeholder="Telefone" style="width:100%; box-sizing: border-box; padding:12px; margin-bottom:16px; font-size:14px; border:1px solid #ccc; border-radius:8px; background-color:#f9f9f9; color:#333;" type="tel" />
+<div style="border-top: 1px solid #eee; margin-top: 16px; padding-top: 16px;">
+    <input id="client-cep" placeholder="CEP" style="width:100%; box-sizing: border-box; padding:12px; margin-bottom:12px; font-size:14px; border:1px solid #ccc; border-radius:8px; background-color:#f9f9f9; color:#333;" type="tel" />
+
+    <div id="address-fields-container" style="display: none;">
+        <div style="display:flex; gap:10px; margin-bottom:12px;">
+            <input id="client-street" placeholder="Rua" style="width:70%; box-sizing: border-box; padding:12px; font-size:14px; border:1px solid #ccc; border-radius:8px; background-color:#f9f9f9; color:#333;" type="text" />
+            <input id="client-number" placeholder="Nº" style="width:30%; box-sizing: border-box; padding:12px; font-size:14px; border:1px solid #ccc; border-radius:8px; background-color:#f9f9f9; color:#333;" type="text" />
+        </div>
+        <input id="client-neighborhood" placeholder="Bairro" style="width:100%; box-sizing: border-box; padding:12px; margin-bottom:12px; font-size:14px; border:1px solid #ccc; border-radius:8px; background-color:#f9f9f9; color:#333;" type="text" />
+        <div style="display:flex; gap:10px;">
+            <input id="client-city" placeholder="Cidade" style="width:70%; box-sizing: border-box; padding:12px; font-size:14px; border:1px solid #ccc; border-radius:8px; background-color:#f9f9f9; color:#333;" type="text" />
+            <input id="client-state" placeholder="UF" style="width:30%; box-sizing: border-box; padding:12px; font-size:14px; border:1px solid #ccc; border-radius:8px; background-color:#f9f9f9; color:#333;" type="text" />
+        </div>
+    </div>
+</div>
+<p id="form-error" style="color:#0078D4; font-size:14px; display:none; margin:10px 0; font-weight:bold;">Preencha todos os campos obrigat&oacute;rios.</p>
+
+<div id="order-bump-section" style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px;">
+
+    <label for="orderbump1" style="display: flex; align-items: center; padding: 12px; border: 2px dashed #ff8a00; border-radius: 8px; cursor: pointer;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3B9JmvjP5Qz3Z2F1-a1B0h2W2x8e3s0E4w&s" alt="Coca-Cola" style="width: 50px; height: 50px; object-fit: contain; margin-right: 12px;">
+        <div style="flex-grow: 1;">
+            <strong style="font-size: 15px;">Coca-Cola 2 litros</strong>
+            <div>
+                <span style="text-decoration: line-through; color: #888; font-size: 13px;">R$16,70</span>
+                <strong style="color: #27ae60; font-size: 15px; margin-left: 5px;">R$ 15,03</strong>
+            </div>
+        </div>
+        <div style="background: #ff8a00; color: white; padding: 8px 12px; border-radius: 6px; font-weight: bold; display: flex; align-items: center;">
+            <input type="checkbox" id="orderbump1" style="margin-right: 8px; width: 18px; height: 18px;">
+            PEGAR
+        </div>
+    </label>
+
+    <label for="orderbump2" style="display: flex; align-items: center; padding: 12px; border: 2px dashed #ff8a00; border-radius: 8px; cursor: pointer;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-v25H7L2M78l8sMhWdjAcDNoi0a9i4o3tZw&s" alt="Coca-Cola Zero" style="width: 50px; height: 50px; object-fit: contain; margin-right: 12px;">
+        <div style="flex-grow: 1;">
+            <strong style="font-size: 15px;">Coca-Cola 2 litros Zero</strong>
+            <div>
+                <span style="text-decoration: line-through; color: #888; font-size: 13px;">R$16,70</span>
+                <strong style="color: #27ae60; font-size: 15px; margin-left: 5px;">R$ 15,30</strong>
+            </div>
+        </div>
+        <div style="background: #ff8a00; color: white; padding: 8px 12px; border-radius: 6px; font-weight: bold; display: flex; align-items: center;">
+            <input type="checkbox" id="orderbump2" style="margin-right: 8px; width: 18px; height: 18px;">
+            PEGAR
+        </div>
+    </label>
+
+    <label for="orderbump3" style="display: flex; align-items: center; padding: 12px; border: 2px dashed #ff8a00; border-radius: 8px; cursor: pointer;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_xNq4rY5p-U0G2sQ_bO8u_rE9H_zZ9lC5Q&s" alt="Borda Catupiry" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px; margin-right: 12px;">
+        <div style="flex-grow: 1;">
+            <strong style="font-size: 15px;">Borda CATUPIRY original</strong>
+            <div>
+                <span style="text-decoration: line-through; color: #888; font-size: 13px;">R$10,70</span>
+                <strong style="color: #27ae60; font-size: 15px; margin-left: 5px;">R$ 9,63</strong>
+            </div>
+        </div>
+        <div style="background: #ff8a00; color: white; padding: 8px 12px; border-radius: 6px; font-weight: bold; display: flex; align-items: center;">
+            <input type="checkbox" id="orderbump3" style="margin-right: 8px; width: 18px; height: 18px;">
+            PEGAR
+        </div>
+    </label>
+
+    <label for="orderbump4" style="display: flex; align-items: center; padding: 12px; border: 2px dashed #ff8a00; border-radius: 8px; cursor: pointer;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk8Y-z_Z-G_p-e_Z-D_X_f_kF-dY6J_aA&s" alt="Pizza Doce" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px; margin-right: 12px;">
+        <div style="flex-grow: 1;">
+            <strong style="font-size: 15px;">Pizza Doce M&Ms</strong>
+            <div>
+                <span style="text-decoration: line-through; color: #888; font-size: 13px;">R$27,00</span>
+                <strong style="color: #27ae60; font-size: 15px; margin-left: 5px;">R$ 25,11</strong>
+            </div>
+        </div>
+        <div style="background: #ff8a00; color: white; padding: 8px 12px; border-radius: 6px; font-weight: bold; display: flex; align-items: center;">
+            <input type="checkbox" id="orderbump4" style="margin-right: 8px; width: 18px; height: 18px;">
+            PEGAR
+        </div>
+    </label>
+</div>
+
+<div id="shipping-options-section" style="margin-top: 24px;">
+    <h3 style="margin-top: 0; margin-bottom: 12px; text-align: left; font-size: 16px;">Escolha o melhor frete para você:</h3>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+        
+        <label id="label-frete-gratis" for="frete-gratis" style="border: 1px solid #ccc; border-radius: 8px; padding: 12px; display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+            <div style="display: flex; align-items: center;">
+                <input type="radio" id="frete-gratis" name="frete" value="0" checked style="margin-right: 12px; width: 18px; height: 18px;">
+                <div>
+                    <strong>Entrega Grátis</strong>
+                    <div style="font-size: 13px; color: #666;">de 35 até 65 minutos</div>
+                </div>
+            </div>
+            <strong>Grátis</strong>
+        </label>
+        
+        <label id="label-frete-rapido" for="frete-rapido" style="border: 1px solid #ccc; border-radius: 8px; padding: 12px; display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+            <div style="display: flex; align-items: center;">
+                <input type="radio" id="frete-rapido" name="frete" value="940" style="margin-right: 12px; width: 18px; height: 18px;">
+                <div>
+                    <strong>Entrega Rápida</strong>
+                    <div style="font-size: 13px; color: #666;">de 25 até 35 minutos</div>
+                </div>
+            </div>
+            <strong>R$ 9,40</strong>
+        </label>
+
+    </div>
+</div>
+<button id="gerar-pix" onmouseout="this.style.backgroundColor='#0078D4'" onmouseover="this.style.backgroundColor='#005a9e'" style="background:#0078D4; color:#fff; border:none; padding:14px 20px; width: 100%; border-radius:8px;margin-top:10px; font-weight:bold; font-size:16px; cursor:pointer; transition: background-color 0.2s ease;">Pagar agora</button></div>
+
+<div id="pix-result" style="display:none; text-align:center; padding: 24px;"><img alt="Banner do site" src="images/banner.png" style="width: 100%; height: auto; display: block;margin-top: -30%;" />
+<div id="qr-code" style="display:flex; justify-content:center; margin-bottom:16px; background:white; padding:10px; border: 1px solid #eee; border-radius:8px; width: 200px; height: 200px; margin-left:auto; margin-right:auto;"></div>
+
+<p style="color:#666; font-size:14px; margin-bottom:8px;">Ou use o PIX Copia e Cola:</p>
+<input id="pix-code" readonly="readonly" style="width:100%; box-sizing: border-box; padding:12px; font-size:14px; margin-bottom:12px; border:1px solid #ccc; border-radius:8px; color:#333; background:#f0f0f0; text-align:center;" type="text" /><button id="copiar-codigo" onmouseout="this.style.backgroundColor='#0078D4'" onmouseover="this.style.backgroundColor='#005a9e'" style="background:#0078D4; color:#fff; width:100%; border:none; padding:14px 20px; border-radius:8px; font-weight:bold; font-size:16px; cursor:pointer; transition: background-color 0.2s ease;">Copiar c&oacute;digo PIX</button>
+
+<div style="font-size:14px; color:#333; line-height:1.5; text-align: center; margin-top: 20px;">
+<p style="margin:8px 0;">💰 Valor: <strong id="pix-valor">R$ 9,90</strong></p>
+
+<p style="margin:8px 0;">🕒 Expira em: <span id="modal-expiration">--</span></p>
+
+<p style="margin:12px 0 0; color:#0078D4; font-weight:bold;">Pagamento seguro via PIX</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Facebook Pixel --><script>
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;n=f.fbq=function(){
+      n.callMethod?
+      n.callMethod.apply(n,arguments):
+      n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;
+    n.version='2.0';n.queue=[];t=b.createElement(e);
+    t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+  }(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1212');
+  fbq('track','PageView');
+</script><script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script><script>
+  // Valor 0 ou 1 injetado pelo gerador
+  let captureLead = 1;
+  // Flag para evitar duplo disparo
+  let isGenerating = false;
+
+
+
+// --- FUNÇÃO PARA VALIDAR OS CAMPOS DO FORMULÁRIO ---
+// --- FUNÇÃO PARA VALIDAR OS CAMPOS (ATUALIZADA) ---
+function validarFormulario() {
+    // Campos que estão sempre visíveis
+    const camposSempreObrigatorios = ['client-name', 'client-email', 'client-phone', 'client-cep'];
+    let isFormularioValido = true;
+    const erroElemento = document.getElementById('form-error');
+
+    // 1. Valida os campos que estão sempre visíveis
+    camposSempreObrigatorios.forEach(id => {
+        const campo = document.getElementById(id);
+        if (!campo.value.trim()) {
+            campo.style.borderColor = '#e31837';
+            isFormularioValido = false;
+        } else {
+            campo.style.borderColor = '#ccc';
+        }
+    });
+
+    // 2. Valida os campos de endereço APENAS se estiverem visíveis
+    const addressContainer = document.getElementById('address-fields-container');
+    if (addressContainer.style.display === 'block') {
+        const camposDeEndereco = ['client-street', 'client-number', 'client-neighborhood', 'client-city', 'client-state'];
+        camposDeEndereco.forEach(id => {
+            const campo = document.getElementById(id);
+            if (!campo.value.trim()) {
+                campo.style.borderColor = '#e31837';
+                isFormularioValido = false;
+            } else {
+                campo.style.borderColor = '#ccc';
+            }
+        });
+    }
+
+    erroElemento.style.display = isFormularioValido ? 'none' : 'block';
+    return isFormularioValido;
+}
+
+
+// --- PREÇOS DOS PRODUTOS ---
+// --- PREÇOS DOS PRODUTOS ATUALIZADOS ---
+const precoPrincipal = 2990;
+const precoBump1 = 1503; // Coca-Cola
+const precoBump2 = 1530; // Coca-Cola Zero
+const precoBump3 = 963;  // Borda Catupiry
+const precoBump4 = 2511; // Pizza Doce M&Ms
+const precoFreteRapido = 940;
+
+// --- FUNÇÃO DE CÁLCULO ATUALIZADA ---
+// --- FUNÇÃO DE CÁLCULO ATUALIZADA ---
+function calcularValorTotal() {
+    let valorFinal = precoPrincipal;
+
+    // Soma os order bumps
+    if (document.getElementById('orderbump1').checked) valorFinal += precoBump1;
+    if (document.getElementById('orderbump2').checked) valorFinal += precoBump2;
+    if (document.getElementById('orderbump3').checked) valorFinal += precoBump3;
+    if (document.getElementById('orderbump4').checked) valorFinal += precoBump4;
+
+    // Soma o frete, se o frete rápido for selecionado
+    if (document.getElementById('frete-rapido').checked) {
+        valorFinal += precoFreteRapido;
+    }
+
+    return valorFinal;
+}
+// --- FUNÇÃO PARA BUSCAR ENDEREÇO VIA CEP (ATUALIZADA) ---
+async function buscarCep(cep) {
+    const cepLimpo = cep.replace(/\D/g, '');
+    const addressContainer = document.getElementById('address-fields-container');
+
+    // Esconde os campos de endereço ao iniciar a busca ou se o CEP for inválido
+    addressContainer.style.display = 'none';
+
+    if (cepLimpo.length !== 8) return;
+
+    const ruaInput = document.getElementById('client-street');
+    const bairroInput = document.getElementById('client-neighborhood');
+    const cidadeInput = document.getElementById('client-city');
+    const estadoInput = document.getElementById('client-state');
+    const numeroInput = document.getElementById('client-number');
+
+    ruaInput.value = 'Buscando...';
+    bairroInput.value = 'Buscando...';
+
+    try {
+        const response = await fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`);
+        const data = await response.json();
+
+        if (data.erro) {
+            alert('CEP não encontrado.');
+            ruaInput.value = '';
+            bairroInput.value = '';
+        } else {
+            // Preenche os campos
+            ruaInput.value = data.logradouro;
+            bairroInput.value = data.bairro;
+            cidadeInput.value = data.localidade;
+            estadoInput.value = data.uf;
+            
+            // MOSTRA O CONTAINER DOS CAMPOS DE ENDEREÇO
+            addressContainer.style.display = 'block';
+            
+            numeroInput.focus();
+        }
+    } catch (error) {
+        alert('Não foi possível consultar o CEP.');
+        console.error('Erro ao buscar CEP:', error);
+        ruaInput.value = '';
+        bairroInput.value = '';
+    }
+}
+
+// --- NOVA FUNÇÃO PARA ESTILO DO FRETE ---
+function atualizarSelecaoFrete() {
+    const freteGratisLabel = document.getElementById('label-frete-gratis');
+    const freteRapidoLabel = document.getElementById('label-frete-rapido');
+    
+    if (document.getElementById('frete-rapido').checked) {
+        freteRapidoLabel.style.borderColor = '#0078D4';
+        freteRapidoLabel.style.borderWidth = '2px';
+        freteGratisLabel.style.borderColor = '#ccc';
+        freteGratisLabel.style.borderWidth = '1px';
+    } else {
+        freteGratisLabel.style.borderColor = '#0078D4';
+        freteGratisLabel.style.borderWidth = '2px';
+        freteRapidoLabel.style.borderColor = '#ccc';
+        freteRapidoLabel.style.borderWidth = '1px';
+    }
+}
+// Função para atualizar o texto do botão de pagamento CORRIGIDA
+function atualizarBotaoDePagamento() {
+    const valorTotalEmCentavos = calcularValorTotal();
+    const botaoPagar = document.getElementById('gerar-pix');
+    
+    // Converte o valor de centavos para Reais antes de formatar
+    const valorEmReais = valorTotalEmCentavos / 100;
+
+    // Formata o valor para o padrão brasileiro (R$ XX,XX)
+    const valorFormatado = valorEmReais.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    
+    if(botaoPagar) {
+        botaoPagar.textContent = `Pagar agora ${valorFormatado}`;
+    }
+}
+// Adiciona os "escutadores" de eventos para os checkboxes
+// --- BLOCO DOMContentLoaded ATUALIZADO ---
+// --- BLOCO DOMContentLoaded ATUALIZADO ---
+document.addEventListener('DOMContentLoaded', () => {
+    const bump1 = document.getElementById('orderbump1');
+    const bump2 = document.getElementById('orderbump2');
+    const bump3 = document.getElementById('orderbump3'); // Novo
+    const bump4 = document.getElementById('orderbump4'); // Novo
+    const freteGratisRadio = document.getElementById('frete-gratis');
+    const freteRapidoRadio = document.getElementById('frete-rapido');
+
+    // Eventos que atualizam o valor total
+    if(bump1) bump1.addEventListener('change', atualizarBotaoDePagamento);
+    if(bump2) bump2.addEventListener('change', atualizarBotaoDePagamento);
+    if(bump3) bump3.addEventListener('change', atualizarBotaoDePagamento); // Novo
+    if(bump4) bump4.addEventListener('change', atualizarBotaoDePagamento); // Novo
+    if(freteGratisRadio) freteGratisRadio.addEventListener('change', atualizarBotaoDePagamento);
+    if(freteRapidoRadio) freteRapidoRadio.addEventListener('change', atualizarBotaoDePagamento);
+
+    // Eventos que atualizam o estilo visual do frete
+    if(freteGratisRadio) freteGratisRadio.addEventListener('change', atualizarSelecaoFrete);
+    if(freteRapidoRadio) freteRapidoRadio.addEventListener('change', atualizarSelecaoFrete);
+
+    // Pega o campo de CEP e adiciona o evento
+    const cepInput = document.getElementById('client-cep');
+    if(cepInput) {
+        cepInput.addEventListener('blur', (event) => {
+            buscarCep(event.target.value);
+        });
+    }
+
+    // Funções iniciais ao carregar a página
+    atualizarBotaoDePagamento();
+    atualizarSelecaoFrete();
+});
+
+  // Função que dispara toda a geração do PIX e só aí abre o modal
+  async function gerarPix() {
+    // evita reentrada
+
+    if (isGenerating) return;
+    isGenerating = true;
+
+
+
+    // desabilita o botão caso exista
+    const btn = document.getElementById('gerar-pix');
+    if (btn) {
+      btn.disabled = true;
+      btn.style.cursor = 'not-allowed';
+      btn.textContent = 'Gerando…';
+    }
+
+
+function gerarCPFValido() {
+  let n = Array(9).fill(0).map(() => Math.floor(Math.random() * 10));
+  
+  // --- Calcula o primeiro dígito verificador ---
+  let d1 = n.reduce((acc, val, i) => acc + val * (10 - i), 0);
+  d1 = 11 - (d1 % 11);
+  if (d1 >= 10) d1 = 0;
+
+  // --- Calcula o segundo dígito verificador ---
+  let d2 = n.reduce((acc, val, i) => acc + val * (11 - i), 0) + (d1 * 2);
+  d2 = 11 - (d2 % 11);
+  if (d2 >= 10) d2 = 0;
+  
+  // Retorna o CPF completo como string
+  return `${n.join('')}${d1}${d2}`;
+}
+    // 1) coleta dados fixos ou do form
+    let nome, email, telefone, cpf;
+    if (captureLead) {
+      nome     = document.getElementById('client-name').value.trim();
+      email    = document.getElementById('client-email').value.trim();
+      telefone = document.getElementById('client-phone').value.trim();
+      cpf      = gerarCPFValido();
+    } else {
+      cpf      = gerarCPFValido();
+      nome     = "Fulano de Tal";
+      telefone = "11988887777";
+      email    = "fulano@example.com";
+    }
+
+    // 2) InitiateCheckout no Pixel
+   const valor = calcularValorTotal();
+    const utms  = Object.fromEntries(
+      new URLSearchParams(location.search).entries()
+    );
+    fbq && fbq('track','InitiateCheckout',{ value: valor/100, currency:'BRL' });
+
+    // 3) fetch pro back-end
+    const res  = await fetch("geradorparadise.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: nome, email, phone: telefone, cpf,
+        amount: valor, utm: utms
+      })
+    });
+    const data = await res.json();
+    if (!data.success) return alert("Erro ao gerar cobrança.");
+
+    // 4) troca componente de tela
+    document.getElementById('lead-capture').style.display = 'none';
+    document.getElementById('gerar-pix').style.display    = 'none';
+    document.getElementById('pix-result').style.display   = 'block';
+
+    // 5) renderiza QR e expiração
+    document.getElementById("pix-code").value = data.pix_data.qrCodeText;
+// --- CÓDIGO PARA ADICIONAR ---
+// Atualiza o texto do valor final na tela do PIX
+const valorFinalFormatado = (valor / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+document.getElementById('pix-valor').innerHTML = valorFinalFormatado; // Usamos innerHTML para manter o <strong>
+// --- FIM DO CÓDIGO ADICIONADO ---
+    new QRCode(document.getElementById("qr-code"), {
+      text: data.pix_data.qrCodeText, width: 200, height: 200
+    });
+    const exp = new Date(Date.now() + 300000);
+    document.getElementById("modal-expiration")
+      .textContent = exp.toLocaleString("pt-BR");
+
+    // 6) polling -> Purchase -> redirect
+if (!window._checker) {
+  window._checker = setInterval(async () => {
+    // monta a URL sem backticks
+    const r = await fetch(
+      'verificar_status.php?hash=' + data.transaction_hash
+    );
+    const d = await r.json();
+    if (d.payment_status === 'paid') {
+      fbq && fbq('track','Purchase');
+      clearInterval(window._checker);
+
+      // adiciona UTMs ao redirect
+      const qs = new URLSearchParams(utms).toString();
+      window.location.href = "https://google.com" + (qs ? '?' + qs : '');
+    }
+  }, 3000);
+}
+
+
+    // 7) abre o modal só agora
+    document.getElementById('popup-pix').style.display = 'flex';
+  }
+
+  // Handler de PAGAR AGORA
+  document.getElementById("abrir-popup")
+    .addEventListener("click", () => {
+      if (captureLead === 1) {
+        // mostra form + botão
+        document.getElementById('lead-capture').style.display = 'block';
+        document.getElementById('gerar-pix').style.display    = 'inline-block';
+        document.getElementById('pix-result').style.display   = 'none';
+        document.getElementById('popup-pix').style.display    = 'flex';
+      } else {
+        // dispara direto sem reabrir modal aqui
+        gerarPix();
+      }
+    });
+
+  // Handler de GERAR PIX (caso captureLead===1)
+  document.getElementById("gerar-pix")
+    .addEventListener("click", gerarPix);
+
+  // Copiar PIX
+  document.getElementById("copiar-codigo")
+    .addEventListener("click", () => {
+      const btn = document.getElementById("copiar-codigo");
+      navigator.clipboard.writeText(
+        document.getElementById("pix-code").value
+      ).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = "Copiado!";
+        btn.style.backgroundColor = "#22c55e";
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.style.backgroundColor = "#00c27a";
+        }, 2000);
+      });
+    });
+
+  // Fechar + reset
+  document.getElementById("fechar-popup")
+    .addEventListener("click", () => {
+      document.getElementById("popup-pix").style.display = "none";
+      clearInterval(window._checker);
+      window._checker = undefined;
+      // reseta flag para permitir nova geração
+      isGenerating = false;
+      // reabilita botão, se existir
+      const btn2 = document.getElementById('gerar-pix');
+      if(btn2) {
+        btn2.disabled = false;
+        btn2.textContent = 'Gerar PIX';
+        btn2.style.cursor = 'pointer';
+      }
+    });
+</script></div>
+</body>
+</html>
